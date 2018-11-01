@@ -1,2 +1,7 @@
-<%=@experience.name%>
-<%=@experience.description%>
+<%=render 'application/header'%>
+
+<div class="experience-show">
+  <h2><%=@experience.name.capitalize%></h2> <br><br>
+  <%=@experience.description%><br><br>
+  <%=@experience.user.first_name%>
+</div>

@@ -3,7 +3,7 @@
 
     <%if logged_in?%>
       <div class="header-user-name">
-        <h4><%=current_user.name%></h4>
+        <h4><%=current_user.first_name%></h4>
       </div>
 
       <div class="header-logout">
@@ -20,5 +20,6 @@
         </div> <!-- header-login -->
       </div> <!-- sign-up-log-in -->
     <%end%>
+
   </div> <!-- header-container -->
 </div> <!-- header -->

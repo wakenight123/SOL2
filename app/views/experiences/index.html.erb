@@ -4,7 +4,7 @@
   <div class="all-experiences">
     <h1> All Experiences </h1>
 
-    <%Experience.all.each do |experience|%>
+    <%Experience.all.sort{|a,b| b.id <=> a.id}.each do |experience|%>
       <div class ="experience-individual">
         <h3><%=experience.name.capitalize%><h3>
         <h4><%=experience.user.first_name.capitalize%></h4> <br>

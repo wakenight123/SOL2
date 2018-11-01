@@ -1,0 +1,18 @@
+
+  <div class="sign-up-form">
+    <h1 class="signup">Sign Up</h1>
+
+    <%=form_for :user do |f|%>
+      <%=f.text_field :first_name, placeholder: "First Name"%> <br><br>
+
+      <%=f.text_field :last_name, placeholder: "Last Name"%> <br><br>
+
+      <%=f.text_field :email, placeholder: "Email"%> <br><br>
+
+      <%=f.password_field :password, placeholder: "Password"%> <br><br>
+
+      <%=f.password_field :password_confirmation, placeholder: "Password Confirmation"%> <br><br>
+
+      <%=f.submit "Submit", id: "submit"%>
+    <%end%>
+  </div> <!--sign-up-form-->

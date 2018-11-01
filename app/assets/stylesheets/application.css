@@ -86,6 +86,9 @@ body {
 
 .header-user-name {
   position: relative;
+  float: right;
+  right: 110px;
+  margin-top: -3px;
   display: inline-block;
 }
 
@@ -104,6 +107,7 @@ body {
 .header-logout {
   position: relative;
   display: inline-block;
+  float: right;
   margin-top: 19px;
 }
 

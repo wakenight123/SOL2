@@ -1,0 +1,7 @@
+<%=render 'application/header'%>
+
+<%=@user.first_name%> <%=@user.last_name%>
+
+<%@user.experiences.each do |experience|%>
+  <%=experience.name%>
+<%end%>
