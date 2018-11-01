@@ -2892,3 +2892,636 @@ Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.0ms)
   [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "experiences"[0m
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/experiences/new" for 127.0.0.1 at 2018-10-31 23:23:02 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bennyhung/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by ExperiencesController#new as HTML
+  Rendering experiences/new.html.erb within layouts/application
+  Rendered experiences/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 220ms (Views: 195.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/experiences/new" for 127.0.0.1 at 2018-10-31 23:23:03 -0400
+Processing by ExperiencesController#new as HTML
+  Rendering experiences/new.html.erb within layouts/application
+  Rendered experiences/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 20ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/experiences/new" for 127.0.0.1 at 2018-10-31 23:23:08 -0400
+Processing by ExperiencesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TFhpmHn3zud+9HL9lZxMmLG/Qcyc646Zj5Kiy/S7+CRAuSJUp2GdDjBHQOYZH/vJMqBaJwJyFnIHP2YwY2jomQ==", "experience"=>{"name"=>"helping my mom", "description"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/experiences_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/experiences_controller.rb:12
+Completed 422 Unprocessable Entity in 8ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: User must exist):
+  
+app/controllers/experiences_controller.rb:12:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "about", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Benny"], ["last_name", "Hung"], ["email", "bennyhudsonhung@gmail.com"], ["password_digest", "silvana2"], ["about", "student for life"], ["created_at", "2018-11-01 03:27:11.707011"], ["updated_at", "2018-11-01 03:27:11.707011"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/experiences/new" for 127.0.0.1 at 2018-10-31 23:28:55 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bennyhung/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by ExperiencesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TFhpmHn3zud+9HL9lZxMmLG/Qcyc646Zj5Kiy/S7+CRAuSJUp2GdDjBHQOYZH/vJMqBaJwJyFnIHP2YwY2jomQ==", "experience"=>{"name"=>"helping my mom", "description"=>""}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/experiences_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/experiences_controller.rb:13
+  [1m[36mExperience Create (0.5ms)[0m  [1m[32mINSERT INTO "experiences" ("name", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["name", "helping my mom"], ["description", ""], ["created_at", "2018-11-01 03:28:56.048832"], ["updated_at", "2018-11-01 03:28:56.048832"], ["user_id", 1]]
+  ↳ app/controllers/experiences_controller.rb:13
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/experiences_controller.rb:13
+Redirected to http://localhost:3000/experiences/1
+Completed 302 Found in 50ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/experiences/1" for 127.0.0.1 at 2018-10-31 23:28:56 -0400
+Processing by ExperiencesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mExperience Load (0.2ms)[0m  [1m[34mSELECT  "experiences".* FROM "experiences" WHERE "experiences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/experiences_controller.rb:18
+  Rendering experiences/show.html.erb within layouts/application
+  Rendered experiences/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 190ms (Views: 186.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/experiences/1" for 127.0.0.1 at 2018-10-31 23:29:43 -0400
+Processing by ExperiencesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mExperience Load (0.4ms)[0m  [1m[34mSELECT  "experiences".* FROM "experiences" WHERE "experiences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/experiences_controller.rb:21
+  Rendering experiences/show.html.erb within layouts/application
+  Rendered experiences/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 28ms (Views: 15.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/experiences/1" for 127.0.0.1 at 2018-10-31 23:29:44 -0400
+Processing by ExperiencesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT  "experiences".* FROM "experiences" WHERE "experiences"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/experiences_controller.rb:21
+  Rendering experiences/show.html.erb within layouts/application
+  Rendered experiences/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 19ms (Views: 16.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/experiences/new" for 127.0.0.1 at 2018-10-31 23:29:46 -0400
+Processing by ExperiencesController#new as HTML
+  Rendering experiences/new.html.erb within layouts/application
+  Rendered experiences/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 44ms (Views: 41.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/experiences/new" for 127.0.0.1 at 2018-10-31 23:29:53 -0400
+Processing by ExperiencesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IgaCKeJEJoj1X0andW+M3xQlur8bMH8WneDf9ymt7+Eu58nlPNJ1YbvsdLz57DuOlzqhVIWp5/0VTRsMvn7/XA==", "experience"=>{"name"=>"tough times", "description"=>"dsdsdsdsd"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/experiences_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/experiences_controller.rb:13
+  [1m[36mExperience Create (0.4ms)[0m  [1m[32mINSERT INTO "experiences" ("name", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["name", "tough times"], ["description", "dsdsdsdsd"], ["created_at", "2018-11-01 03:29:53.062563"], ["updated_at", "2018-11-01 03:29:53.062563"], ["user_id", 1]]
+  ↳ app/controllers/experiences_controller.rb:13
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/experiences_controller.rb:13
+Redirected to http://localhost:3000/experiences/2
+Completed 302 Found in 17ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/experiences/2" for 127.0.0.1 at 2018-10-31 23:29:53 -0400
+Processing by ExperiencesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT  "experiences".* FROM "experiences" WHERE "experiences"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/experiences_controller.rb:21
+  Rendering experiences/show.html.erb within layouts/application
+  Rendered experiences/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 26ms (Views: 22.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-10-31 23:30:02 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  [1m[36mExperience Load (0.2ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:1
+  Rendered experiences/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 24ms (Views: 21.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/experiences/new" for 127.0.0.1 at 2018-10-31 23:30:06 -0400
+Processing by ExperiencesController#new as HTML
+  Rendering experiences/new.html.erb within layouts/application
+  Rendered experiences/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/experiences/new" for 127.0.0.1 at 2018-10-31 23:41:39 -0400
+Processing by ExperiencesController#new as HTML
+  Rendering experiences/new.html.erb within layouts/application
+  Rendered experiences/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 101ms (Views: 85.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/experiences/new" for 127.0.0.1 at 2018-10-31 23:42:13 -0400
+Processing by ExperiencesController#new as HTML
+  Rendering experiences/new.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.8ms)
+  Rendered experiences/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/experiences/new" for 127.0.0.1 at 2018-10-31 23:43:56 -0400
+Processing by ExperiencesController#new as HTML
+  Rendering experiences/new.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  Rendered experiences/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 28ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/experiences/new" for 127.0.0.1 at 2018-10-31 23:45:15 -0400
+Processing by ExperiencesController#new as HTML
+  Rendering experiences/new.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  Rendered experiences/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 28ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/experiences/new" for 127.0.0.1 at 2018-10-31 23:45:52 -0400
+Processing by ExperiencesController#new as HTML
+  Rendering experiences/new.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  Rendered experiences/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 28ms (Views: 25.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/experiences/new" for 127.0.0.1 at 2018-10-31 23:48:07 -0400
+Processing by ExperiencesController#new as HTML
+  Rendering experiences/new.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.6ms)
+  Rendered experiences/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 23ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/experiences/new" for 127.0.0.1 at 2018-10-31 23:50:46 -0400
+Processing by ExperiencesController#new as HTML
+  Rendering experiences/new.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  Rendered experiences/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 47ms (Views: 44.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-10-31 23:51:37 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered experiences/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/bennyhung/Code/SOL2/app/views/experiences/index.html.erb:9: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/experiences/index.html.erb:9: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/experiences/new" for 127.0.0.1 at 2018-10-31 23:51:43 -0400
+Processing by ExperiencesController#new as HTML
+  Rendering experiences/new.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  Rendered experiences/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-10-31 23:51:47 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered experiences/index.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/bennyhung/Code/SOL2/app/views/experiences/index.html.erb:9: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/experiences/index.html.erb:9: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/experiences" for 127.0.0.1 at 2018-10-31 23:52:10 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  [1m[36mExperience Load (0.9ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:3
+  Rendered experiences/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 25ms (Views: 22.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-10-31 23:53:24 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  [1m[36mExperience Load (0.2ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:3
+  Rendered experiences/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 41ms (Views: 38.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-10-31 23:53:26 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:3
+  Rendered experiences/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-10-31 23:53:38 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:4
+  Rendered experiences/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 23ms (Views: 20.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-10-31 23:54:27 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:7
+  Rendered experiences/index.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 47ms (Views: 43.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-10-31 23:54:43 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:7
+  Rendered experiences/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 30ms (Views: 27.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-10-31 23:54:45 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:7
+  Rendered experiences/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-10-31 23:54:52 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:7
+  Rendered experiences/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 23ms (Views: 20.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-10-31 23:56:13 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.4ms)
+  [1m[36mExperience Load (0.3ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  Rendered experiences/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-10-31 23:56:43 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.6ms)
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  Rendered experiences/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 51ms (Views: 48.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-10-31 23:57:50 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:11
+  Rendered experiences/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 55ms (Views: 53.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-10-31 23:57:59 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.7ms)
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:11
+  Rendered experiences/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 53ms (Views: 50.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-10-31 23:58:35 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  [1m[36mExperience Load (0.2ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:11
+  Rendered experiences/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-11-01 00:00:49 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  Rendered experiences/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 25ms (Views: 23.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-11-01 00:01:19 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  [1m[36mExperience Load (0.2ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  Rendered experiences/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-11-01 00:02:03 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  Rendered experiences/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 50ms (Views: 48.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-11-01 00:02:10 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  Rendered experiences/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 48ms (Views: 46.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-11-01 00:02:27 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  Rendered experiences/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 46ms (Views: 44.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-11-01 00:02:36 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  Rendered experiences/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 46ms (Views: 44.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-11-01 00:03:25 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.4ms)
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  Rendered experiences/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 47ms (Views: 44.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-11-01 00:03:38 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  Rendered experiences/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 45ms (Views: 42.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-11-01 00:03:56 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  Rendered experiences/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 47ms (Views: 45.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-11-01 00:04:02 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  Rendered experiences/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 49ms (Views: 46.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-11-01 00:04:46 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.6ms)
+  [1m[36mExperience Load (0.2ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  Rendered experiences/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 31ms (Views: 28.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-11-01 00:05:01 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  [1m[36mExperience Load (0.2ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  Rendered experiences/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 26ms (Views: 23.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-11-01 00:05:14 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.6ms)
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  Rendered experiences/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 55ms (Views: 52.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-11-01 00:05:34 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.6ms)
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  Rendered experiences/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 52ms (Views: 50.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-11-01 00:05:49 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  Rendered experiences/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-11-01 00:05:57 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.5ms)
+  [1m[36mExperience Load (0.1ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  Rendered experiences/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 52ms (Views: 49.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-11-01 00:06:04 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.6ms)
+  [1m[36mExperience Load (0.3ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  Rendered experiences/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 53ms (Views: 50.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/experiences" for 127.0.0.1 at 2018-11-01 00:06:13 -0400
+Processing by ExperiencesController#index as HTML
+  Rendering experiences/index.html.erb within layouts/application
+  Rendered application/_header.html.erb (0.6ms)
+  [1m[36mExperience Load (0.2ms)[0m  [1m[34mSELECT "experiences".* FROM "experiences"[0m
+  ↳ app/views/experiences/index.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/experiences/index.html.erb:10
+  Rendered experiences/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 50ms (Views: 48.2ms | ActiveRecord: 0.3ms)
+
+

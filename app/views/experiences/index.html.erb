@@ -1,5 +1,14 @@
-<%Experience.all.each do |experience|%>
-  <div class ="experience-individual">
-    <%=experience.name%>
-  </div>
-<%end%>
+<%=render 'application/header'%>
+
+<div class="page-content">
+  <div class="all-experiences">
+    <h1> All Experiences </h1>
+
+    <%Experience.all.each do |experience|%>
+      <div class ="experience-individual">
+        <h3><%=experience.name.capitalize%><h3>
+        <h4><%=experience.user.first_name.capitalize%></h4> <br>
+      </div><!--experience-individual-->
+    <%end%>
+  </div><!--all-experiences-->
+</div><!--page-content-->

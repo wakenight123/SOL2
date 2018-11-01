@@ -13,3 +13,156 @@
  *= require_tree .
  *= require_self
  */
+
+ * {
+   margin-left: 0px;
+   margin-right: 0px;
+   margin-top: 0px;
+   margin-bottom: 0px;
+   font-family: "Avenir Next";
+}
+
+
+body {
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 100%;
+}
+
+/* APPLICATION / HEADER */
+/* ==================== */
+
+.header {
+  position: fixed;
+  top: 0px;
+  height: 60px;
+  background-color: black;
+  width: 100%;
+  z-index: 10;
+}
+
+.header-container {
+  width: 1030px;
+  margin: 0 auto;
+}
+
+.header img.portfomio-logo {
+  width: 110px;
+  margin-top: 19px;
+  margin-right: 100px;
+}
+
+.header-silhouette img {
+  margin-top: 17px;
+}
+
+.user-and-log-in-out {
+  position: relative;
+  float: right;
+  right: 0px;
+}
+
+.header-current-user {
+  position: relative;
+  margin-top: -3px;
+  float: left;
+}
+
+.header-silhouette {
+  width: 30px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 7px;
+  margin-top: 1px;
+}
+
+.header-silhouette img {
+  position: relative;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.header-user-name {
+  position: relative;
+  display: inline-block;
+}
+
+.header-user-name h4 {
+  color: white;
+  font-family: "Avenir Next";
+  font-weight: 600;
+  font-size: 15px;
+  margin-top: 23px;
+}
+
+.header-user-name h4:hover {
+  color: rgb(3,185,252);
+}
+
+.header-logout {
+  position: relative;
+  display: inline-block;
+  margin-top: 19px;
+}
+
+.header-logout p.separator {
+  display: inline-block;
+  color: rgb(80,80,80);
+  margin-right: 10px;
+  margin-left: 16px;
+}
+
+.header-logout p {
+  display: inline-block;
+}
+
+.header-logout a {
+  color: gray;
+  font-family: "Avenir Next";
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.header-logout a:hover {
+  color: white;
+}
+
+.sign-up-log-in {
+  position: relative;
+  float: right;
+  right: 0px;
+  margin-top: 19px;
+}
+
+.header-signup {
+  float: left;
+}
+
+.sign-up-log-in p {
+  display: inline-block;
+  color: rgb(80,80,80);
+}
+
+.sign-up-log-in p.separator {
+  margin-right: 10px;
+  margin-left: 12px;
+}
+
+.sign-up-log-in p,
+.header-login {
+  display: inline-block;
+
+}
+
+.header-signup a, .header-login a{
+  color: gray;
+  font-family: "Avenir Next";
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.header-signup a:hover, .header-login a:hover {
+  color: white;
+}

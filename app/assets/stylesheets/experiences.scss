@@ -2,8 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// start Experiences/New //
+
 .new-content {
-  margin-top: 140px;
+  margin-top: 150px;
 }
 
 h3 {
@@ -57,6 +59,31 @@ h3 {
 }
 
 .new-experience-form {
-
   text-align: center;
+}
+
+// end Experiences/New //
+
+// start Experiences/Index //
+
+.page-content {
+  margin-left: 40px;
+}
+
+.all-experiences {
+  margin-top: 100px;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+.experience-individual h3 {
+  margin-left: 0px;
+  margin-bottom: 3px;
+}
+
+.experience-individual h4 {
+  font-weight: 400;
+  margin-bottom: 6px;
 }

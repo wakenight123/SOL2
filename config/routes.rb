@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
 
+  root 'application#index'
+
+  get '/home' => 'application#home'
+
+  get '/application/header' => 'application#header'
+
+  get '/signup' => 'users#new'
+  post '/signup' => 'users#create'
+  get '/users/:id' => 'users#show'
+  get '/home' => 'application#home'
+
+  get '/users/:id/edit' => 'users#edit'
+
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+
   get '/experiences/new' => 'experiences#new'
 
   post '/experiences/new' => 'experiences#create'

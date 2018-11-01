@@ -1,0 +1,24 @@
+<div class="header">
+  <div class="header-container">
+
+    <%if logged_in?%>
+      <div class="header-user-name">
+        <h4><%=current_user.name%></h4>
+      </div>
+
+      <div class="header-logout">
+        <p><%=link_to "Log Out", logout_path%></p>
+      </div>
+    <%else%>
+      <div class="sign-up-log-in">
+        <div class="header-signup">
+          <p><%=link_to "Sign Up", signup_path%></p>
+        </div>
+        <p class="separator"> | </p>
+        <div class="header-login">
+          <p><%=link_to "Log In", login_path%></p>
+        </div> <!-- header-login -->
+      </div> <!-- sign-up-log-in -->
+    <%end%>
+  </div> <!-- header-container -->
+</div> <!-- header -->
