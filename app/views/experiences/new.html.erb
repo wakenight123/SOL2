@@ -1,0 +1,17 @@
+
+<div class="new-content">
+  <h3>Sharing personal experiences that are meaningful to us can greatly inspire and benefit others. <br><br>
+
+  What experience would you like to share? </h3>
+
+  <div class="new-experience-form">
+    <%=form_for :experience do |f|%>
+      <%=f.text_field :name, class: 'new-experience-name', placeholder: "An experience I've had was...", autocomplete: "off", maxlength:"80"%>
+<br>
+      <%=f.text_area :description, class: 'new-experience-description', placeholder: "Optional: Describe in more detail.", autocomplete: "off"%>
+
+      <br><br>
+      <%=f.submit "Submit", class: "submit"%>
+    <%end%>
+</div> <!--new-experience-form-->
+</div> <!--new-content-->

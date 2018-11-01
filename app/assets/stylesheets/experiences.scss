@@ -1,0 +1,62 @@
+// Place all the styles related to the Experiences controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.new-content {
+  margin-top: 140px;
+}
+
+h3 {
+  font-family: Avenir next;
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(60,60,60);
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+
+.new-experience-name {
+  font-family: "Avenir Next";
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(60,60,60);
+  width: 600px;
+  height: 38px;
+  outline: none;
+  margin-bottom: 25px;
+  border: 1px solid rgb(150,150,150);
+  border-radius: 4px;
+  padding-left: 11px;
+  padding-top: 1px;
+
+}
+
+.new-experience-description {
+  font-family: "Avenir Next";
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(60,60,60);
+  min-width: 600px;
+  min-height: 100px;
+  outline: none;
+  border: 1px solid rgb(150,150,150);
+  border-radius: 4px;
+  max-width: 600px;
+  padding-left: 11px;
+  padding-top: 12px;
+}
+
+::placeholder {
+  font-family: "Avenir next";
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+  color: rgb(140,140,140);
+}
+
+.new-experience-form {
+
+  text-align: center;
+}
