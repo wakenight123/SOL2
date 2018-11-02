@@ -1,3 +1,50 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// start Users / New //
+
+.sign-up-form {
+  margin-left: 40px;
+  margin-top: 30px;
+}
+
+.user-form {
+  font-family: "Avenir Next";
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(60,60,60);
+  width: 300px;
+  height: 38px;
+  outline: none;
+  margin-bottom: -2px;
+  border: 1px solid rgb(150,150,150);
+  border-radius: 4px;
+  padding-left: 11px;
+  padding-top: 1px;
+}
+
+::placeholder {
+  font-family: "Avenir next";
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+  color: rgb(140,140,140);
+}
+
+.login-instead {
+  margin-left: 40px;
+}
+
+.login-instead h4 {
+  margin-top: 20px;
+  font-weight: 400;
+  font-size: 13.5px;
+}
+
+.login-instead h4 a {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(70,70,70);
+  text-decoration: none;
+}
