@@ -5,10 +5,14 @@
     <h1> All Experiences </h1>
 
     <%Experience.all.sort{|a,b| b.id <=> a.id}.each do |experience|%>
-      <div class ="experience-individual">
-        <h3><%=experience.name.capitalize%><h3>
-        <h4><%=experience.user.first_name.capitalize%></h4> <br>
-      </div><!--experience-individual-->
+      <%=link_to "/experiences/#{experience.id}" do%>
+        <div class ="experience-individual">
+          <div class="top">
+            <h3><%=experience.name.humanize%></h3>
+          </div>
+          <h4><%=experience.user.first_name.humanize%></h4>
+        </div><!--experience-individual-->
+      <%end%>
     <%end%>
   </div><!--all-experiences-->
 </div><!--page-content-->

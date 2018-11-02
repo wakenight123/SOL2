@@ -4,20 +4,20 @@ class SessionsController < ApplicationController
     if logged_in?
       redirect_to experiences_path
     else
-      redirect_to '/login'
+      render :new
     end
   end
 
   def create
     if params[:user][:email].blank? || params[:user][:password].blank?
-      redirect_to '/login'
+      render :new
     else
       if @user=User.find_by(email: params[:user][:email])
         if @user.authenticate(params[:user][:password])
           session[:user_id]=@user.id
           redirect_to experiences_path
         else
-          redirect_to '/login'
+          render :new
         end
       end
     end

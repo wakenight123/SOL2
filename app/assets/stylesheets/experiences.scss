@@ -66,35 +66,52 @@ h3 {
 
 // start Experiences/Index //
 
-.page-content {
-  margin-left: 40px;
-}
-
 .all-experiences {
   margin-top: 100px;
+  text-align: center;
 }
 
 h1 {
-  margin-bottom: 30px;
+  margin-bottom: 45px;
 }
 
 .experience-individual {
+  width: 220px;
+  height: 106px;
   border: 1px solid rgb(150,150,150);
-  margin-right: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
   margin-bottom: -1px;
+  vertical-align: top;
+  display: inline-block;
+  padding: 15px 15px 15px 15px;
+}
+
+.top {
+  width: 220px;
+
 }
 
 .experience-individual h3 {
-  margin-left: 15px;
-  margin-top: 15px;
-  margin-bottom: -8px;
-  width: 800px;
+  font-size: 15px;
+  height: 76px;
+  line-height: 20px;
+  text-align: left;
+  width: 220px;
+
+}
+
+.all-experiences > a  {
+  text-decoration: none;
 }
 
 .experience-individual h4 {
+  color: rgb(70,70,70);
+  font-size: 14px;
   font-weight: 400;
+  margin-top: -30px;
   margin-bottom: 0px;
-  margin-left: 15px;
+
 }
 // end Experiences/Index //
 
