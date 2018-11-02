@@ -1,13 +1,15 @@
-
   <div class="log-in-form">
     <h1 class="login">Log In</h1>
 
     <%=form_for :user do |f|%>
-      <%=f.text_field :email, placeholder: "Email"%> <br><br>
+      <%=f.text_field :email, class: "user-email user-form", placeholder: "Email"%> <br><br>
 
-      <%=f.password_field :password, placeholder: "Password"%> <br><br>
+      <%=f.password_field :password, class: "user-password user-form", placeholder: "Password"%> <br><br>
 
       <%=f.submit "Log In", id: "submit"%>
     <%end%>
+  </div>
 
+  <div class="signup-instead">
+    <h4>Not yet a user? Create an account. &nbsp <%=link_to 'Sign Up', '/signup'%></h4>
   </div>
