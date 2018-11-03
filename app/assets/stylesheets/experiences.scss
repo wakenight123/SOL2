@@ -5,7 +5,7 @@
 // start Experiences/New //
 
 .new-content {
-  margin-top: 150px;
+  margin-top: 130px;
 }
 
 h3 {
@@ -65,13 +65,19 @@ h3 {
 
 // start Experiences/Index //
 
+.page-content {
+  max-width: 100%;
+  text-align: center;
+
+}
+
 .all-experiences {
-  margin-top: 100px;
+  margin-top: 40px;
   text-align: center;
 }
 
 h1 {
-  margin-bottom: 45px;
+  margin-top: 110px;
 }
 
 .experience-individual {
@@ -80,7 +86,8 @@ h1 {
   border: 1px solid rgb(150,150,150);
   margin-left: 10px;
   margin-right: 10px;
-  margin-bottom: -1px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   vertical-align: top;
   display: inline-block;
   padding: 15px 15px 15px 15px;

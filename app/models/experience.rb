@@ -7,4 +7,8 @@ class Experience < ApplicationRecord
 
   validates_presence_of :name
 
+  def titlelize #capitalize first letter of experience
+    "#{self.name.split(' ')[0].capitalize} " + self.name.split(' ').drop(1).join(' ')
+  end
+
 end
