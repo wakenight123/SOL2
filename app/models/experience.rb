@@ -11,4 +11,8 @@ class Experience < ApplicationRecord
     "#{self.name.split(' ')[0].capitalize} " + self.name.split(' ').drop(1).join(' ')
   end
 
+  def self.total_experiences
+    Experience.all.count
+  end
+
 end

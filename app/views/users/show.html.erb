@@ -1,7 +1,26 @@
 <%=render 'application/header'%>
 
-<%=@user.first_name%> <%=@user.last_name%>
+<div class="all-second-header">
+  <%if @user == current_user%>
+    <h1> Your Experiences <span class="count"> (<%=current_user.experiences.count%>)<span> </h1>
+  <%else%>
+    <h1> <%=@user.first_name%>'s Experiences </h1>
+  <%end%>
+  <div class="add-experience">
+    <%=link_to "/experiences/new" do%><h3> + Add Experience <%end%></h3>
+  </div>
+</div>
 
-<%@user.experiences.each do |experience|%>
-  <%=experience.name%>
-<%end%>
+<div class="page-content">
+  <div class="all-experiences">
+    <%@user.experiences.all.sort{|a,b| b.id <=> a.id}.each do |experience|%>
+      <%=link_to "/experiences/#{experience.id}" do%>
+        <div class ="experience-individual">
+          <div class="top">
+            <h3><%=experience.titlelize%></h3>
+          </div>
+        </div><!--experience-individual-->
+      <%end%>
+    <%end%>
+  </div><!--all-experiences-->
+</div><!--page-content-->
