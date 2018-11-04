@@ -19,9 +19,9 @@
             <h4><%=experience.user.first_name.capitalize%></h4>
           <%end%>
           <%if experience.user == current_user%>
-
+            <%=link_to "/users/#{experience.user_id}/experiences/#{experience.id}/edit" do%>
               <p class="list-edit">edit</p>
-
+            <%end%>
           <%end%>
         </div><!--experience-individual-->
       <%end%>
