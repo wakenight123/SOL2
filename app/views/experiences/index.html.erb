@@ -20,8 +20,7 @@
             <%if experience.user.avatar.present?%>
               <%=image_tag experience.user.avatar.url(:large) %>
             <%else%>
-              <div class="gray">
-              </div>
+              <img class="silhouette" src="silhouette.png">
             <%end%>
           </div>
 
