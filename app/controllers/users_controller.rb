@@ -31,11 +31,9 @@ class UsersController < ApplicationController
     def update
       @user=User.find(params[:id])
       if @user.update_attributes(user_params)
-        if params[:user][:avatar].present?
-          render :crop
-        else
+        render :show
+      else
         render :edit
-        end
       end
     end
 

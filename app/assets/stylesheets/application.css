@@ -17,14 +17,13 @@
 
  */
 
-
-
  * {
    margin-left: 0px;
    margin-right: 0px;
    margin-top: 0px;
    margin-bottom: 0px;
    font-family: "Avenir Next";
+
 }
 
 
@@ -34,7 +33,9 @@ body {
   margin-top: 0px;
   margin-bottom: 0px;
   width: 100%;
-  background-color: rgb(250,250,250);
+  background-image: url("/wallpaper.jpg");
+  background-repeat: no-repeat;
+   background-attachment: fixed;
 }
 
 /* APPLICATION / HEADER */

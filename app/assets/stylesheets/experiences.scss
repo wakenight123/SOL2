@@ -71,7 +71,7 @@ h3 {
 .all-second-header {
   position: fixed;
   top: 40px;
-  background-color: white;
+  background-color: rgba(255,255,255,0.4);
   height: 60px;
   width: 100%;
   z-index: 5;
@@ -112,6 +112,7 @@ span.count {
   max-width: 100%;
   text-align: center;
   margin-top: 160px;
+
 }
 
 .all-experiences {
@@ -120,9 +121,9 @@ span.count {
 }
 
 .experience-individual {
-  width: 210px;
-  height: 106px;
-  background-color: white;
+  width: 220px;
+  height: 240px;
+  background-color: rgba(252,252,252,0.08);
   box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.12);
   margin-left: 10px;
   margin-right: 10px;
@@ -130,23 +131,70 @@ span.count {
   margin-top: 10px;
   vertical-align: top;
   border-radius: 3px;
-  padding: 15px 15px 15px 15px;
+  padding-left: 15px;
+  padding-right: 15px;
   display: inline-block;
   text-align: left;
+  overflow: hidden;
 }
 
 .top {
-  width: 220px;
+  background-color: rgba(255,255,255,0.08);
+  width: 250px;
+  height: 116px;
+  padding-top: 13px;
+  margin-left: -15px;
+  box-shadow: 0px 1px 10px 1px rgba(0,0,0,0.08);
 }
 
 .experience-individual h3 {
   font-size: 15px;
   height: 76px;
-  color: rgb(100,100,100);
+  color: rgb(180,180,180);
   font-weight: 600;
   line-height: 20px;
-  text-align: left;
+  text-align: center;
   width: 220px;
+}
+
+.list-image {
+  text-align: center;
+  margin-top: -36px;
+  z-index: 5;
+}
+
+.list-image img {
+  width: 70px;
+  border-radius: 50%;
+
+}
+
+.gray {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  text-align: center;
+  margin: 0 auto;
+  background-color: grey;
+}
+
+.circle {
+  height: 70px;
+  width: 70px;
+  display: block;
+  margin: 1em auto;
+  background-color: rgba(255,255,255,0.08);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-border-radius: 60em;
+  -moz-border-radius: 80em;
+  border-radius: 80em;
+  border: 6px solid rgba(255,255,255,0.08);
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1);
+  margin-top: -82px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .experience-individual a {
@@ -157,11 +205,12 @@ span.count {
 }
 
 .experience-individual h4 {
-  color: rgb(70,70,70);
-  font-size: 14px;
+  color: rgb(180,180,180);
+  font-size: 14.5px;
   font-weight: 400;
-  margin-top: -28px;
+  margin-top: -8px;
   margin-bottom: 0px;
+  text-align: center;
 }
 
 p.list-edit {
