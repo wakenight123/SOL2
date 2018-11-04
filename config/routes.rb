@@ -24,9 +24,13 @@ Rails.application.routes.draw do
 
   post '/experiences/new' => 'experiences#create'
 
-  get '/experiences/:id' => 'experiences#show'
+  get '/users/:id/experiences/:id' => 'experiences#show'
 
   resources :experiences
   resources :users
+
+  resources :users do
+    resources :experiences
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

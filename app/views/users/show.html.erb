@@ -14,7 +14,7 @@
 <div class="page-content">
   <div class="all-experiences">
     <%@user.experiences.all.sort{|a,b| b.id <=> a.id}.each do |experience|%>
-      <%=link_to "/experiences/#{experience.id}" do%>
+      <%=link_to "/users/#{experience.user_id}/experiences/#{experience.id}" do%>
         <div class ="experience-individual">
           <div class="top">
             <h3><%=experience.titlelize%></h3>
