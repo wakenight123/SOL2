@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get '/users/:id/edit' => 'users#edit'
 
+  post '/users/:id/edit' => 'users#update'
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
 
@@ -26,11 +28,17 @@ Rails.application.routes.draw do
 
   get '/users/:id/experiences/:id' => 'experiences#show'
 
+  get '/users/:id/experiences/:id/edit' => 'experiences#edit'
+
+  post '/users/:id/experiences/:id/edit' => 'experiences#update'
+
   resources :experiences
-  resources :users
 
   resources :users do
     resources :experiences
   end
+
+  resources :users
+  root to: 'users#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

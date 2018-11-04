@@ -5,7 +5,7 @@ class Experience < ApplicationRecord
   has_many :types
   has_many :themes
 
-  validates_presence_of :name
+  validates_presence_of :name, :how_i_can_help
 
   def titlelize #capitalize first letter of experience
     "#{self.name.split(' ')[0].capitalize} " + self.name.split(' ').drop(1).join(' ')

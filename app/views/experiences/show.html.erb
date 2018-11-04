@@ -1,7 +1,11 @@
 <%=render 'application/header'%>
 
 <div class="experience-show">
-  <h2><%=@experience.name.capitalize%></h2> <br><br>
-  <%=@experience.description%><br><br>
-  <%=@experience.user.first_name%>
+  <div class="left">
+    <h2><%=@experience.titlelize%></h2>
+    <h4><%=@experience.description%></h4>
+  </div>
+  <div class="right">
+    <h4><%=@experience.user.first_name%></h4>
+  </div>
 </div>

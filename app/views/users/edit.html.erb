@@ -1,0 +1,9 @@
+<%=render 'application/header'%>
+
+<div class="image-uploader">
+  <%=form_for :user do |f|%>
+    <%=f.file_field :avatar%>
+
+    <%=f.submit "submit"%>
+  <%end%>
+</end>
