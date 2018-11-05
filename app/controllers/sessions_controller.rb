@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
 
   def new
     if logged_in?
+      
       redirect_to experiences_path
     else
       render :new
